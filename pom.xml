@@ -12,10 +12,9 @@
 
 <modules>
     <module>operra-model</module>
-    <module>operra-context</module>
     <module>operra-backend</module>
+    <module>operra-meta</module>
     <module>operra-ui</module>
-    <module>operra-app</module>
 </modules>
 
 <properties>

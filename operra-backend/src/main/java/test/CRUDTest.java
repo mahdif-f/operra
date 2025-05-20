@@ -7,7 +7,10 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 public class CRUDTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
+//        Class<?> cls = Class.forName("model.test.Customer");
+//        System.out.println(cls.getName());
+
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("operraPU");
         EntityManager em = emf.createEntityManager();
 

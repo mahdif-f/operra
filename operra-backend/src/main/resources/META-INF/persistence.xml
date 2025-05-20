@@ -4,6 +4,11 @@
              version="3.0">
 
     <persistence-unit name="operraPU" transaction-type="RESOURCE_LOCAL">
+        <class>model.test.Customer</class>
+        <class>model.test.Order</class>
+        <class>model.test.OrderItem</class>
+        <class>model.test.Product</class>
+
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
 
         <properties>
