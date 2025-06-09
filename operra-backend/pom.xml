@@ -12,6 +12,7 @@
     </parent>
 
     <artifactId>operra-backend</artifactId>
+    <packaging>war</packaging>
 
     <dependencies>
         <dependency>
@@ -42,7 +43,7 @@
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
-            <version>12.10.0.jre11</version>
+            <version>12.6.2.jre11</version>
         </dependency>
 
         <!-- Jakarta EE API (provided scope) -->
@@ -59,6 +60,37 @@
             <artifactId>jboss-logging</artifactId>
             <version>3.5.1.Final</version>
         </dependency>
+
+        <dependency>
+            <groupId>jakarta.ws.rs</groupId>
+            <artifactId>jakarta.ws.rs-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mvel</groupId>
+            <artifactId>mvel2</artifactId>
+            <version>2.4.14.Final</version>
+        </dependency>
     </dependencies>
+
+    <build>
+        <finalName>operra-war</finalName> <!-- اسم خروجی war -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <!-- موارد زیر اختیاری هستن؛ فقط در صورت نیاز اضافه کن -->
+                    <!--
+                    <packagingExcludes>WEB-INF/lib/servlet-api.jar</packagingExcludes>
+                    -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
